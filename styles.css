@@ -1,0 +1,126 @@
+body {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #fff; /* Cor de fundo cinza claro */
+    color: #555; /* Cor do texto */
+}
+
+    /* Estilo do menu lateral */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 220px;
+    background-color: 	#4169E1; /* Cor de fundo Azul */;
+}
+
+.nome {
+    font-size: 12px;
+    margin-bottom: 100px;
+    margin-left: 18px;
+    color: #fff;
+}
+
+/* Estilo da lista no menu lateral */
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 8px; /* Bordas arredondadas */
+}
+
+/* Estilo dos itens da lista no menu lateral */
+.sidebar ul li {
+    padding: 4px 17px;
+    margin-top: 10px;
+}
+
+/* Estilo dos links no menu lateral */
+
+.submenu-trigger {
+    text-decoration: none;
+    border-radius: 3px;
+    padding-right: 5px;
+    padding-left: 2px;;
+    color: #fff; /* Cor do texto branco */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave */
+}
+
+/* Estilo do submenu */
+.submenu {
+    text-decoration: none;
+    display:none;
+    background-color: #fff;
+    color: #555;
+    padding: 10px;
+}
+
+.submenu li a {
+    text-decoration: none;
+}
+
+.submenu li a:hover {
+    background-color: #555;
+}
+
+
+/* Estilo do conteúdo principal */
+.content {
+    margin-left: 220px; /* Largura da barra lateral + margem */
+    padding: 20px;
+}
+    
+.container {
+    background-color: #fff; /* Cor de fundo branca */
+    border-radius: 8px; /* Bordas arredondadas */
+    padding: 20px; /* Espaçamento interno */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+}
+    
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555; /* Cor do texto do label */
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 7px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc; /* Borda cinza */
+    border-radius: 4px; /* Bordas arredondadas */
+    box-sizing: border-box; /* Tamanho da caixa incluindo as bordas */
+}
+    
+select {
+    appearance: none; /* Remove os estilos padrão do select */
+    -webkit-appearance: none; /* Para navegadores WebKit */
+    -moz-appearance: none; /* Para navegadores Gecko */
+    background-image: url('data:image/svg+xml;utf8,<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>'); /* Ícone de seta */
+    background-position: right 10px top 50%;
+    background-repeat: no-repeat;
+}
+    
+button {
+    background-color: 	#4169E1; /* Cor de fundo azul */
+    color: #fff; /* Cor do texto branco */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 8px;
+}
+    
+button:hover {
+    background-color: #0056b3; /* Cor de fundo azul mais escura no hover */
+}
+
+.show {
+    display: block !important;
+}

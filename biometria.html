@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Administração OneService</title>
+
+    <link href="styles.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+
+    <div class="sidebar">
+
+        <div class="nome"><h1>ADMINISTRAÇÃO ONESERVICE</h1></div>
+
+        <ul class="menu">
+            <li class="menu-item"> <!-- Primeiro item do menu -->
+                <a href="#" class="submenu-trigger">Relatórios</a> <!-- Link para abrir o submenu -->
+                <ul class="submenu"> <!-- Submenu -->
+                    <li><a href="#">Acesso a salas</a></li>
+                    <li><a href="#">Acesso Biometria</a></li>
+                    <li><a href="#">Quantidade Acessos</a></li>
+                    <li><a href="#">Painel Acessos</a></li>
+                    <li><a href="#">Inventário</a></li>
+                </ul>
+            </li>
+            <li class="menu-item"> <!-- Segundo item do menu -->
+                <a href="#" class="submenu-trigger">Cadastro</a> <!-- Link para abrir o submenu -->
+                <ul class="submenu"> <!-- Submenu -->
+                    <li><a href="#">Biometria</a></li>
+                    <li><a href="#">Equipamentos</a></li>
+                    <li><a href="#">Inventário</a></li>
+                    <li><a href="#">Salas</a></li>
+                    <li><a href="#">Subseção</a></li>
+                    <li><a href="#">Usuários</a></li>
+                </ul>
+            </li>
+            <!-- Adicione mais itens de menu conforme necessário -->
+
+        </ul>
+    </div>
+
+    <div class="container">
+
+    <form id="conf">
+
+        <label for="nrOAB">Número OAB:</label>
+        <input type="text" id="nrOAB" name="nrOAB">
+
+        <label for="ip">Selecione a sala da OAB:</label>
+        <select id="ip" name="ip" class="select2">
+            <option value="172.16.2.203">Fórum de Mandaguari</option>
+            <option value="172.16.4.203">Fórum de Sarandi</option>
+            <option value="172.16.12.203">Casa da Mulher Brasileira</option>
+            <option value="172.16.13.203">Juizado Especial Cível de Curitiba</option>
+            <option value="172.16.42.203">Fórum de Faxinal</option>
+            <option value="172.16.49.203">Justiça do Trabalho de Araucária</option>
+            <option value="172.16.52.203">Fórum de Rio Negro</option>
+            <option value="172.16.82.203">Penitenciária de Piraquara</option>
+            <option value="172.16.94.203">Fórum de Maringá</option>
+            <option value="172.16.106.203">Fórum de São Jerônimo da Serra</option>
+            <option value="172.16.182.203">Policia Federal de Curitiba</option>
+            <option value="172.16.183.203">T.R.E. de Curitiba</option>
+            <option value="172.16.184.203">Fórum Criminal de Curitiba</option>
+            <option value="172.16.185.203">Fórum Cível de Curitiba</option>
+            <option value="172.16.188.203">Fórum de Araucária</option>
+            <option value="172.16.225.203">Fórum Estadual de Ponta Grossa</option>
+            <!-- Adicione mais opções conforme necessário -->
+        </select><br>
+
+        <button type="button" class="SpNext">Cadastrar Biometria</button>
+
+    </form>
+
+    </div>
+    
+    <!-- Incluir a biblioteca jQuery (caso não esteja incluída) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Biblioteca Select2 via CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+
+
+    <script>
+        // Aguarde o documento estar pronto
+        $(document).ready(function () {
+            // Inicialize o Select2 no elemento com classe select2
+            $('.select2').select2();
+
+            // Adicione o evento de clique ao botão
+            $('.SpNext').click(function () {
+                var ip = $('#ip').val();
+                var nrOAB = $('#nrOAB').val();
+
+                // Resto do seu código AJAX...
+            });
+
+            // Capturando todos os spans que irão abrir o submenu
+            var submenuTriggers = document.querySelectorAll('.submenu-trigger');
+
+            // Adicionando manipuladores de eventos para cada span
+            submenuTriggers.forEach(function(trigger) {
+            // Capturando o submenu associado ao span
+            var submenu = trigger.nextElementSibling;
+
+            // Adicionando um manipulador de eventos para o evento "click" no span
+            trigger.addEventListener('click', function() {
+            // Alternando a classe 'show' para mostrar ou ocultar o submenu
+            submenu.classList.toggle('show');
+            });
+
+        });
+
+    });
+
+        
+    </script>
+
+
+</body>
+    
+</html>

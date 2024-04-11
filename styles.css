@@ -42,8 +42,11 @@ body {
     border-radius: 3px;
     padding-right: 5px;
     padding-left: 2px;;
-    color: #fff; /* Cor do texto branco */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave */
+    color: #cecece; /* Cor do texto branco */
+}
+
+.submenu-trigger a:hover {
+    color: #ffffff;
 }
 
 /* Estilo do submenu */
@@ -51,16 +54,17 @@ body {
     text-decoration: none;
     display:none;
     background-color: #fff;
-    color: #555;
-    padding: 10px;
 }
 
 .submenu li a {
     text-decoration: none;
+    color: #555;
 }
 
 .submenu li a:hover {
-    background-color: #555;
+    background-color: #DCDCDC;
+    border-radius: 3px;
+    display: block;
 }
 
 

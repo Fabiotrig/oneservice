@@ -24,7 +24,7 @@
 
         <ul class="menu">
             <li class="menu-item"> <!-- Primeiro item do menu -->
-                <a href="#" class="submenu-trigger">Relatórios</a> <!-- Link para abrir o submenu -->
+                <a href="#" class="submenu-trigger" id="submenu-1">Relatórios</a> <!-- Link para abrir o submenu -->
                 <ul class="submenu"> <!-- Submenu -->
                     <li><a href="#">Acesso a salas</a></li>
                     <li><a href="#">Acesso Biometria</a></li>
@@ -34,7 +34,7 @@
                 </ul>
             </li>
             <li class="menu-item"> <!-- Segundo item do menu -->
-                <a href="#" class="submenu-trigger">Cadastro</a> <!-- Link para abrir o submenu -->
+                <a href="#" class="submenu-trigger" id="submenu-2">Cadastro</a> <!-- Link para abrir o submenu -->
                 <ul class="submenu"> <!-- Submenu -->
                     <li><a href="#">Biometria</a></li>
                     <li><a href="#">Equipamentos</a></li>
@@ -97,7 +97,7 @@
             // Inicialize o Select2 no elemento com classe select2
             $('.select2').select2();
 
-            // Adicione o evento de clique ao botão
+             // Adicione o evento de clique ao botão
             $('.SpNext').click(function () {
                 var ip = $('#ip').val();
                 var nrOAB = $('#nrOAB').val();
@@ -108,15 +108,30 @@
             // Capturando todos os spans que irão abrir o submenu
             var submenuTriggers = document.querySelectorAll('.submenu-trigger');
 
-            // Adicionando manipuladores de eventos para cada span
+            var submenuSelected;
+
+            // Adicionando manipuladores de eventos para cada Link
             submenuTriggers.forEach(function(trigger) {
-            // Capturando o submenu associado ao span
+            // Capturando o submenu associado ao Link
             var submenu = trigger.nextElementSibling;
 
-            // Adicionando um manipulador de eventos para o evento "click" no span
+            // Adicionando um manipulador de eventos para o evento "click" no Link
             trigger.addEventListener('click', function() {
-            // Alternando a classe 'show' para mostrar ou ocultar o submenu
-            submenu.classList.toggle('show');
+            // Verificando se o submenu está atualmente visível
+            var isSubMenuVisible = submenu.classList.contains('show');
+
+            // Se o submenu estiver visível, feche-o
+            if (isSubMenuVisible) {
+                submenu.classList.remove('show');
+            } else {
+                // Se não estiver visível, feche todos os submenus e, em seguida, abra o submenu clicado
+                submenuTriggers.forEach(function(trigger) {
+                    trigger.nextElementSibling.classList.remove('show');
+                });
+                submenu.classList.add('show');
+
+                }
+
             });
 
         });

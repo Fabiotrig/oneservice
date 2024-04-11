@@ -31,8 +31,8 @@ body {
 
 /* Estilo dos itens da lista no menu lateral */
 .sidebar ul li {
-    padding: 4px 17px;
-    margin-top: 10px;
+    padding: 0px 17px;
+    margin-top: 0px;
 }
 
 /* Estilo dos links no menu lateral */
@@ -42,11 +42,11 @@ body {
     border-radius: 3px;
     padding-right: 5px;
     padding-left: 2px;;
-    color: #cecece; /* Cor do texto branco */
+    color: #e4dede; /* Cor do texto branco */
 }
 
-.submenu-trigger a:hover {
-    color: #ffffff;
+.submenu-trigger:hover {
+    color:#ffffff;
 }
 
 /* Estilo do submenu */

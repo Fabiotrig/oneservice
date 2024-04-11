@@ -13,14 +13,16 @@
 
     <link href="styles.css" rel="stylesheet">
 
-    
+
 </head>
 
 <body>
 
     <div class="sidebar">
 
-        <div class="nome"><h1>ADMINISTRAÇÃO ONESERVICE</h1></div>
+        <div class="nome">
+            <h1>ADMINISTRAÇÃO ONESERVICE</h1>
+        </div>
 
         <ul class="menu">
             <li class="menu-item"> <!-- Primeiro item do menu -->
@@ -51,38 +53,38 @@
 
     <div class="container">
 
-    <form id="conf">
+        <form id="conf">
 
-        <label for="nrOAB">Número OAB:</label>
-        <input type="text" id="nrOAB" name="nrOAB">
+            <label for="nrOAB">Número OAB:</label>
+            <input type="text" id="nrOAB" name="nrOAB">
 
-        <label for="ip">Selecione a sala da OAB:</label>
-        <select id="ip" name="ip" class="select2">
-            <option value="172.16.2.203">Fórum de Mandaguari</option>
-            <option value="172.16.4.203">Fórum de Sarandi</option>
-            <option value="172.16.12.203">Casa da Mulher Brasileira</option>
-            <option value="172.16.13.203">Juizado Especial Cível de Curitiba</option>
-            <option value="172.16.42.203">Fórum de Faxinal</option>
-            <option value="172.16.49.203">Justiça do Trabalho de Araucária</option>
-            <option value="172.16.52.203">Fórum de Rio Negro</option>
-            <option value="172.16.82.203">Penitenciária de Piraquara</option>
-            <option value="172.16.94.203">Fórum de Maringá</option>
-            <option value="172.16.106.203">Fórum de São Jerônimo da Serra</option>
-            <option value="172.16.182.203">Policia Federal de Curitiba</option>
-            <option value="172.16.183.203">T.R.E. de Curitiba</option>
-            <option value="172.16.184.203">Fórum Criminal de Curitiba</option>
-            <option value="172.16.185.203">Fórum Cível de Curitiba</option>
-            <option value="172.16.188.203">Fórum de Araucária</option>
-            <option value="172.16.225.203">Fórum Estadual de Ponta Grossa</option>
-            <!-- Adicione mais opções conforme necessário -->
-        </select><br>
+            <label for="ip">Selecione a sala da OAB:</label>
+            <select id="ip" name="ip" class="select2">
+                <option value="172.16.2.203">Fórum de Mandaguari</option>
+                <option value="172.16.4.203">Fórum de Sarandi</option>
+                <option value="172.16.12.203">Casa da Mulher Brasileira</option>
+                <option value="172.16.13.203">Juizado Especial Cível de Curitiba</option>
+                <option value="172.16.42.203">Fórum de Faxinal</option>
+                <option value="172.16.49.203">Justiça do Trabalho de Araucária</option>
+                <option value="172.16.52.203">Fórum de Rio Negro</option>
+                <option value="172.16.82.203">Penitenciária de Piraquara</option>
+                <option value="172.16.94.203">Fórum de Maringá</option>
+                <option value="172.16.106.203">Fórum de São Jerônimo da Serra</option>
+                <option value="172.16.182.203">Policia Federal de Curitiba</option>
+                <option value="172.16.183.203">T.R.E. de Curitiba</option>
+                <option value="172.16.184.203">Fórum Criminal de Curitiba</option>
+                <option value="172.16.185.203">Fórum Cível de Curitiba</option>
+                <option value="172.16.188.203">Fórum de Araucária</option>
+                <option value="172.16.225.203">Fórum Estadual de Ponta Grossa</option>
+                <!-- Adicione mais opções conforme necessário -->
+            </select><br>
 
-        <button type="button" class="SpNext">Cadastrar Biometria</button>
+            <button type="button" class="SpNext">Cadastrar Biometria</button>
 
-    </form>
+        </form>
 
     </div>
-    
+
     <!-- Incluir a biblioteca jQuery (caso não esteja incluída) -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
@@ -97,7 +99,7 @@
             // Inicialize o Select2 no elemento com classe select2
             $('.select2').select2();
 
-             // Adicione o evento de clique ao botão
+            // Adicione o evento de clique ao botão
             $('.SpNext').click(function () {
                 var ip = $('#ip').val();
                 var nrOAB = $('#nrOAB').val();
@@ -111,37 +113,38 @@
             var submenuSelected;
 
             // Adicionando manipuladores de eventos para cada Link
-            submenuTriggers.forEach(function(trigger) {
-            // Capturando o submenu associado ao Link
-            var submenu = trigger.nextElementSibling;
+            submenuTriggers.forEach(function (trigger) {
+                // Capturando o submenu associado ao Link
+                var submenu = trigger.nextElementSibling;
 
-            // Adicionando um manipulador de eventos para o evento "click" no Link
-            trigger.addEventListener('click', function() {
-            // Verificando se o submenu está atualmente visível
-            var isSubMenuVisible = submenu.classList.contains('show');
+                // Adicionando um manipulador de eventos para o evento "click" no Link
+                trigger.addEventListener('click', function () {
+                    // Verificando se o submenu está atualmente visível
+                    var isSubMenuVisible = submenu.classList.contains('show');
 
-            // Se o submenu estiver visível, feche-o
-            if (isSubMenuVisible) {
-                submenu.classList.remove('show');
-            } else {
-                // Se não estiver visível, feche todos os submenus e, em seguida, abra o submenu clicado
-                submenuTriggers.forEach(function(trigger) {
-                    trigger.nextElementSibling.classList.remove('show');
+                    // Se o submenu estiver visível, feche-o
+                    if (isSubMenuVisible) {
+                        submenu.classList.remove('show');
+                    } else {
+                        // Se não estiver visível, feche todos os submenus e, em seguida, abra o submenu clicado
+                        submenuTriggers.forEach(function (trigger) {
+                            trigger.nextElementSibling.classList.remove('show');
+                        });
+                        
+                        submenu.classList.add('show');
+
+                    }
+
                 });
-                submenu.classList.add('show');
-
-                }
 
             });
 
         });
 
-    });
 
-        
     </script>
 
 
 </body>
-    
+
 </html>
